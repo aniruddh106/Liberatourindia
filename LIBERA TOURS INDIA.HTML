@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Libera Tour India</title>
+  <style>
+    :root {
+      --bg-color: #f4f4f4;
+      --text-color: #1a1a1a;
+      --card-bg: #ffffff;
+      --accent: #dc6b19;
+      --muted: #666666;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #101218;
+      --text-color: #ececec;
+      --card-bg: #1f2128;
+      --accent: #8ab4f8;
+      --muted: #999da9;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #ff7e5f, #feb47b); /* Colorful gradient background */
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .hero {
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Taj_Mahal_in_March_2004.jpg/1200px-Taj_Mahal_in_March_2004.jpg') center/cover no-repeat;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 0 0 10px rgba(0,0,0,0.7);
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin: 0;
+    }
+
+    header {
+      padding: 1rem 2rem;
+      background-color: var(--card-bg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      color: var(--text-color);
+      margin-left: 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .card#about {
+      background: var(--card-bg);
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      height: auto;
+      max-height: 300px;
+      overflow: hidden;
+    }
+
+    footer {
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+      background-color: var(--card-bg);
+      margin-top: 2rem;
+    }
+
+    h3 {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>Libera Tour India</h1>
+  </div>
+
+  <header>
+    <div>
+      <button class="toggle-btn" onclick="toggleTheme()">Toggle Theme</button>
+    </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#travel">Travel Experience</a>
+      <a href="#culture">Cultural Heritage</a>
+      <a href="#wildlife">Wildlife</a>
+      <a href="#itinerary">Itineraries</a>
+      <a href="#about">About Us</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="card" id="travel">
+      <h3>Travel Experience</h3>
+      <p>Discover immersive journeys across India's iconic destinations, curated for an unforgettable experience. Whether it's the snow-capped Himalayas or serene backwaters of Kerala, we offer customized adventures for all.</p>
+    </div>
+
+    <div class="card" id="culture">
+      <h3>Cultural Heritage</h3>
+      <p>Explore India’s rich cultural tapestry—from ancient temples, majestic palaces, traditional art forms, and colorful festivals that breathe life into every corner of this ancient land.</p>
+    </div>
+
+    <div class="card" id="wildlife">
+      <h3>Wildlife Adventures</h3>
+      <p>Witness India's incredible biodiversity in over 100 national parks. Go on thrilling safaris in Ranthambhore, Kaziranga, or Jim Corbett and spot tigers, elephants, rhinos, and more in their natural habitats.</p>
+    </div>
+
+    <div class="card" id="itinerary">
+      <h3>Popular Itineraries</h3>
+
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Agra_Fort_and_Yamuna_River.jpg" alt="Golden Triangle">
+        <h3>Golden Triangle Tour</h3>
+        <p>The classic Indian journey combining history, architecture, and royal heritage in three iconic cities: Delhi, Agra, and Jaipur. From the Red Fort and Taj Mahal to Amer Fort, immerse in the grandeur of India's Mughal and Rajput past.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Kerala_Backwaters.jpg" alt="Kerala Backwaters">
+        <h3>Kerala Backwaters & Ayurveda</h3>
+        <p>Relax in houseboats on tranquil backwaters, explore spice plantations, and indulge in rejuvenating Ayurvedic treatments while surrounded by the lush greenery of God's Own Country.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Jodhpur-Rajasthan-Mehrangarh_Fort-03.jpg" alt="Rajasthan Tour">
+        <h3>Rajasthan Royal Heritage Tour</h3>
+        <p>Discover the desert state's opulent forts, colorful bazaars, and regal hospitality in cities like Udaipur, Jodhpur, and Jaisalmer. Witness vibrant culture, camel fairs, and traditional Rajasthani folk performances.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Palolem_beach_goa.jpg" alt="Goa">
+        <h3>Goa Beach Getaway</h3>
+        <p>Experience vibrant nightlife, pristine beaches, Portuguese heritage, and seafood delights along the western coast. Perfect for both relaxation and adventure.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Ladakh_Lake.jpg" alt="Ladakh">
+        <h3>Ladakh Himalayan Expedition</h3>
+        <p>For thrill-seekers—high-altitude adventures, ancient monasteries, and serene lakes like Pangong and Tso Moriri amidst breathtaking Himalayan landscapes.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Meghalaya_cave.jpg" alt="Northeast India">
+        <h3>North East Cultural Trail</h3>
+        <p>Explore the unexplored—Meghalaya’s caves, Assam's tea gardens, and Sikkim’s Buddhist monasteries in this culturally rich and naturally stunning circuit.</p>
+      </div>
+    </div>
+
+    <div class="card" id="about">
+      <h3>About Us</h3>
+      <p>Libera Tour India is your gateway to exploring the magic and mystery of India. With expert local guides, handpicked experiences, and tailor-made itineraries, we help you uncover the soul of this diverse country.</p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Libera Tour India<br>
+    Contact us: <a href="mailto:liberatour@gmail.com">liberatour@gmail.com</a>, <a href="mailto:veeruindia@gmail.com">veeruindia@gmail.com</a><br>
+    Phone: <a href="tel:+919818251206">+91 98182 51206</a>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      if (html.getAttribute('data-theme') === 'dark') {
+        html.removeAttribute('data-theme');
+      } else {
+        html.setAttribute('data-theme', 'dark');
+      }
+    }
+  </script>
+</body>
+</html>
